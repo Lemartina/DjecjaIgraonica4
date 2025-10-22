@@ -1,5 +1,4 @@
 novoselac\controllerweb\OdabirTermina.class
-novoselac\controller\UslugaController.class
 novoselac\resources\JakartaEE10Resource.class
 novoselac\model\Entitet.class
 novoselac\model\Operater.class
@@ -15,14 +14,17 @@ novoselac\controller\ObradaOperater.class
 novoselac\Start.class
 novoselac\controller\Obrada.class
 novoselac\controllerweb\JavaServletDjelatnici.class
+novoselac\controller\usluge\DodajUsluguController.class
 novoselac\controllerweb\DjecaView.class
 novoselac\model\Djelatnik.class
 serveletiPrivremeni\WebObrazac.class
 novoselac\controllerweb\JavaServlet.class
 novoselac\controllerweb\DodajUsluguNaPosjetu.class
 novoselac\util\Aplikacija.class
+novoselac\controller\usluge\BrisiUsluguController.class
 novoselac\controllerweb\PromjeniDjelatnika.class
 novoselac\controllerweb\UslugaNaPosjeti.class
+novoselac\controller\usluge\UrediUsluguController.class
 novoselac\controllerweb\JavaServletVrijeme.class
 novoselac\resources\JavaEE8Resource.class
 novoselac\controllerweb\BrisiDjelatnika.class

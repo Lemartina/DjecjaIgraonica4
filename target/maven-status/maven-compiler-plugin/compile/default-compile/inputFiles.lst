@@ -2,7 +2,7 @@ C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\ma
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\serveletiPrivremeni\BrisiDjelatnika.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\serveletiPrivremeni\OdabirUsluge.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\resources\JavaEE8Resource.java
-C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\controller\UslugaController.java
+C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\controller\usluge\DodajUsluguController.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\util\HibernateUtil.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\serveletiPrivremeni\PromjeniDjelatnika.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\service\UslugaService.java
@@ -11,6 +11,7 @@ C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\ma
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\Start.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\serveletiPrivremeni\VratiDjelatnika.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\serveletiPrivremeni\JavaServletDjelatnici.java
+C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\controller\usluge\UrediUsluguController.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\serveletiPrivremeni\DjelatniciView.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\serveletiPrivremeni\JavaServletObrazac.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\resources\JakartaEE10Resource.java
@@ -31,6 +32,7 @@ C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\ma
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\model\GrafPodaci.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\model\Usluga.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\serveletiPrivremeni\DjecaView.java
+C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\controller\usluge\BrisiUsluguController.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novosealc\djecjaigraonica4\JakartaRestConfiguration.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\serveletiPrivremeni\DodajUsluguNaPosjetu.java
 C:\Users\Administrator\Documents\GitHub\DjecjaIgronicaV4\DjecjaIgraonica4\src\main\java\novoselac\model\Posjeta.java

@@ -1,27 +1,28 @@
 package novoselac.service;
 
+import java.sql.SQLException;
 import novoselac.dao.UslugaDao;
 import novoselac.model.Usluga;
 import java.util.List;
 
 public class UslugaService {
-    private UslugaDao uslugaDao;  //  INSTANCE VARIJABLA
+    private UslugaDao uslugaDAO;  //  INSTANCE VARIJABLA
     
     // KONSTRUKTOR SA DEPENDENCY INJECTION
     public UslugaService() {
-        this.uslugaDao = new UslugaDao();  // INSTANCIRANJE DAO OBJEKTA
+        this.uslugaDAO = new UslugaDao();  // INSTANCIRANJE DAO OBJEKTA
     }
     
     public List<Usluga> dohvatiSveUsluge() {
-        return uslugaDao.getAllUsluge();
+        return uslugaDAO.getAllUsluge();
     }
     
     // KONSTRUKTOR ZA TESTIRANJE (dependency injection)
     public UslugaService(UslugaDao uslugaDao) {
-        this.uslugaDao = uslugaDao;
+        this.uslugaDAO = uslugaDao;
     }
     
-    public boolean dodajUslugu(Usluga usluga) {
+    public boolean dodajUslugu(Usluga usluga) throws SQLException {
         // VALIDACIJA
         if (usluga.getCijena() == null || usluga.getCijena().compareTo(java.math.BigDecimal.ZERO) <= 0 || 
             usluga.getKolicina() == null || usluga.getKolicina().compareTo(java.math.BigDecimal.ZERO) < 0 ||
@@ -30,6 +31,6 @@ public class UslugaService {
         }
         
         // POZIV INSTANCE METODE NA DAO OBJEKTU
-        return uslugaDao.dodajUslugu(usluga);
+        return uslugaDAO.dodajUslugu(usluga);
     }
 }

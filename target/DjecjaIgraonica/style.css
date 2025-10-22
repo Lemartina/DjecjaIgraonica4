@@ -1,20 +1,25 @@
+/* RESET I GLOBALNI STILOVI */
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-image: url(C:\Users\Administrator\Documents\GitHub\DjecjaIgraonica_verzija3\DjecjaIgraonica\src\main\resources\lav.png); 
-    background-size: cover; /* Pokriva cijelu pozadinu */
-    background-position: center; /* Centrira sliku */
-    background-color: #f0f0f0; /* Fallback boja */
-    box-sizing: border-box;
-    font-family: sans-serif;
+    background-image: url('C:\Users\Administrator\Documents\GitHub\DjecjaIgraonica_verzija3\DjecjaIgraonica\src\main\resources\lav.png'); 
+    background-size: cover;
+    background-position: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
 }
 
+/* NAVIGACIJA - MENU BAR */
 .menu-bar {
     background: rgb(14, 37, 97);
     text-align: center;
+    position: relative;
+    z-index: 1000;
 }
 
 .menu-bar ul {
@@ -27,11 +32,13 @@ body {
     width: 120px;
     margin: 15px;
     padding: 15px;
+    position: relative;
 }
 
 .menu-bar ul li a {
     text-decoration: none;
     color: #fff;
+    display: block;
 }
 
 .active, .menu-bar ul li:hover {
@@ -39,6 +46,7 @@ body {
     border-radius: 3px;
 }
 
+/* PADAJUĆI MENI */
 .sub-menu-1 {
     display: none;
 }
@@ -49,6 +57,7 @@ body {
     background: #0e253f;
     margin-top: 15px;
     margin-left: -15px;
+    z-index: 1001;
 }
 
 .menu-bar ul li:hover .sub-menu-1 ul {
@@ -71,4 +80,269 @@ body {
 
 .menu-bar ul li:hover .sub-menu-1 ul li a:hover {
     color: #b2ff00;
+}
+
+/* ZAJEDNIČKI STILOVI ZA SVE STRANICE USLUGA */
+.usluga-container { 
+    margin: 20px; 
+    font-family: Arial, sans-serif;
+    position: relative;
+    z-index: 1;
+}
+.usluga-wrapper { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* TABLICA STILOVI */
+.usluga-table { 
+    border-collapse: collapse; 
+    width: 100%; 
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: white;
+}
+.usluga-table th, .usluga-table td { 
+    border: 1px solid #ddd; 
+    padding: 12px; 
+    text-align: left; 
+}
+.usluga-table th { 
+    background-color: #4CAF50; 
+    color: white;
+    font-weight: bold;
+}
+.usluga-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.usluga-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* FORMA STILOVI */
+.usluga-form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border: 1px solid #e9ecef;
+}
+.usluga-form-group {
+    margin-bottom: 15px;
+}
+.usluga-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+.usluga-form input[type="text"] { 
+    width: 100%; 
+    padding: 10px; 
+    margin: 5px 0; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.usluga-form input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* PORUKE */
+.usluga-success { 
+    color: #155724; 
+    padding: 12px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    margin: 15px 0;
+    border-left: 4px solid #28a745;
+}
+.usluga-error { 
+    color: #721c24; 
+    padding: 12px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin: 15px 0;
+    border-left: 4px solid #dc3545;
+}
+
+/* BOTUNI */
+.usluga-btn {
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+.usluga-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.usluga-btn-success {
+    background-color: #28a745;
+}
+.usluga-btn-success:hover {
+    background-color: #218838;
+}
+
+/* AKCIJE */
+.usluga-actions { 
+    white-space: nowrap; 
+    text-align: center;
+}
+.btn-delete { 
+    background-color: #dc3545; 
+    color: white; 
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 2px;
+}
+.btn-delete:hover {
+    background-color: #c82333;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.btn-edit {
+    background-color: #ffc107;
+    color: #212529;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin: 2px;
+}
+.btn-edit:hover {
+    background-color: #e0a800;
+    color: #212529;
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.btn-view {
+    background-color: #17a2b8;
+    color: white;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin: 2px;
+}
+.btn-view:hover {
+    background-color: #138496;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* LINKOVI I NAVIGACIJA */
+.usluga-link {
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+.usluga-link:hover {
+    background-color: #545b62;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.usluga-link-primary {
+    background-color: #007bff;
+}
+.usluga-link-primary:hover {
+    background-color: #0056b3;
+}
+.usluga-nav {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #e9ecef;
+}
+.usluga-nav h2 {
+    margin-top: 0;
+    color: #495057;
+    margin-bottom: 15px;
+}
+
+/* DODATNI RESPONZIVNI STILOVI */
+@media (max-width: 768px) {
+    .menu-bar ul {
+        display: block;
+    }
+    
+    .menu-bar ul li {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .usluga-wrapper {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    .usluga-container {
+        margin: 10px;
+    }
+    
+    .usluga-table {
+        font-size: 14px;
+    }
+    
+    .usluga-table th,
+    .usluga-table td {
+        padding: 8px;
+    }
+}
+
+/* HEADER STILOVI */
+.header {
+    background: linear-gradient(135deg, #0e2561 0%, #1e3c8b 100%);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+    font-size: 1.1em;
+    opacity: 0.9;
 }
