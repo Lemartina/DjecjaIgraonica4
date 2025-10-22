@@ -5,29 +5,31 @@ import novoselac.model.Usluga;
 import java.util.List;
 
 public class UslugaService {
-    private UslugaDao UslugaDao;  //  INSTANCE VARIJABLA
+    private UslugaDao uslugaDao;  //  INSTANCE VARIJABLA
     
     // KONSTRUKTOR SA DEPENDENCY INJECTION
     public UslugaService() {
-        this.UslugaDao = new UslugaDao();  // INSTANCIRANJE DAO OBJEKTA
+        this.uslugaDao = new UslugaDao();  // INSTANCIRANJE DAO OBJEKTA
     }
     
-     public List<Usluga> dohvatiSveUsluge() {
-        return UslugaDao.getAllUsluge();
+    public List<Usluga> dohvatiSveUsluge() {
+        return uslugaDao.getAllUsluge();
     }
+    
     // KONSTRUKTOR ZA TESTIRANJE (dependency injection)
     public UslugaService(UslugaDao uslugaDao) {
-        this.UslugaDao = uslugaDao;
+        this.uslugaDao = uslugaDao;
     }
     
     public boolean dodajUslugu(Usluga usluga) {
         // VALIDACIJA
-        if (usluga.getCijena().compareTo(java.math.BigDecimal.ZERO) <= 0 || 
-            usluga.getKolicina().compareTo(java.math.BigDecimal.ZERO) < 0) {
+        if (usluga.getCijena() == null || usluga.getCijena().compareTo(java.math.BigDecimal.ZERO) <= 0 || 
+            usluga.getKolicina() == null || usluga.getKolicina().compareTo(java.math.BigDecimal.ZERO) < 0 ||
+            usluga.getNaziv() == null || usluga.getNaziv().trim().isEmpty()) {
             return false;
         }
         
         // POZIV INSTANCE METODE NA DAO OBJEKTU
-        return UslugaDao.getAllUsluge().add(usluga);
+        return uslugaDao.dodajUslugu(usluga);
     }
 }

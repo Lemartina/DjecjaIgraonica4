@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -21,34 +20,33 @@
         <div class="wrapper">
             <h1>Unos usluga</h1>
             
-        <!-- OBRAZAC ZA POPUNJAVANJE TABLICE USLUGA-->
-
-                   <!--PRIKAZ  tablice-->
-                   
-                 <!--</textarea>--> 
-               <br><br>
+            <!-- OBRAZAC ZA DODAVANJE NOVE USLUGE -->
+            <form action="UslugaController" method="post">
                <div>
-                  <input type="text" id="naziv" name= "naziv" placeholder='Naziv'>
+                  <input type="text" id="naziv" name="naziv" placeholder='Naziv' required>
                   <br><br>
                </div>                
                <div>                  
-                   <input type="jedinicaMjere" id="jedinicaMjere" name= "jedinicaMjere" placeholder='Jedinica mjere'>                   <br><br>               </div>
+                   <input type="text" id="jedinicaMjere" name="jedinicaMjere" placeholder='Jedinica mjere' required>
+                   <br><br>
+               </div>
                 <div>
-                   <input type="cijena" id="cijena" name= "cijena" placeholder='Cijena'>
+                   <input type="text" id="cijena" name="cijena" placeholder='Cijena' required>
                    <br><br>
                 </div>
                  <div>
-                   <input type="kolicina" id="kolicina" name= "kolicina" placeholder='Količina'>
+                   <input type="text" id="kolicina" name="kolicina" placeholder='Količina' required>
                    <br><br>
                </div>
         
                   <button type="submit" class="btn btn-primary">Dodaj</button>
+            </form>
 
             <!-- Tablica za prikaz usluga -->
             <h2>Popis usluga</h2>
             <c:choose>
                 <c:when test="${empty usluge}">
-                   
+                    <p>Nema unesenih usluga.</p>
                 </c:when>
                 <c:otherwise>
                     <table>
@@ -67,12 +65,12 @@
                                 <td>${usluga.kolicina}</td>
                                 <td>${usluga.naziv}</td>
                                 <td>
-                                    <a href="UrediUslugu?id=${usluga.id}">
+                                    <a href="UrediUslugu?id=${usluga.sifra}">
                                         <i class="fas fa-edit"></i> Uredi
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="BrisiUslugu?id=${usluga.id}" 
+                                    <a href="BrisiUslugu?id=${usluga.sifra}" 
                                        onclick="return confirm('Jeste li sigurni da želite obrisati uslugu?')">
                                         <i class="fas fa-trash"></i> Briši
                                     </a>
