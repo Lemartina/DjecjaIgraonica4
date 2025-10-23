@@ -35,7 +35,7 @@
                 </div>
             </c:if>
 
-            <!-- FORMA ZA DODAVANJE - ISPRAVLJEN ACTION -->
+            <!-- FORMA ZA DODAVANJE -->
             <form action="DodajUsluguController" method="post" class="usluga-form">
                 <div class="usluga-form-group">
                     <label for="naziv"><i class="fas fa-tag"></i> Naziv usluge:</label>
