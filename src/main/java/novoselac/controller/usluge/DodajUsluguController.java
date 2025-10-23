@@ -25,9 +25,12 @@ public class DodajUsluguController extends HttpServlet {
         // DOHVAĆANJE PODATAKA preko servisa
         List<Usluga> usluge = uslugaService.dohvatiSveUsluge();
         
-        // PROSLJEĐIVANJE PODATAKA VIEW-u
+        // PROSLJEĐIVANJE PODATAKA VIEW-u - I
         request.setAttribute("usluge", usluge);
-        request.getRequestDispatcher("/META-INF/views/DodajUslugaViewWeb.jsp").forward(request, response);
+        request.setAttribute("poruka", request.getAttribute("poruka"));
+        request.setAttribute("greska", request.getAttribute("greska"));
+        
+        request.getRequestDispatcher("/WEB-INF/views/DodajUslugaViewWeb.jsp").forward(request, response);
     }
     
     @Override

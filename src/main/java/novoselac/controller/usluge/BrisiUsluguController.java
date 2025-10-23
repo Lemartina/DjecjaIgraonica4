@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@WebServlet("/BrisiUslugu")
+@WebServlet("/BrisiUsluguController")
 public class BrisiUsluguController extends HttpServlet {
     private static final Logger LOGGER = Logger.getLogger(BrisiUsluguController.class.getName());
     private UslugaDao uslugaDAO;
