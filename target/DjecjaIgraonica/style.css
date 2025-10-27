@@ -6,12 +6,13 @@
 }
 
 body {
-    background-color: #f0f0f0;
+    background-color: lightcyan;
     font-family: 'Arial', sans-serif;
-    min-height: 100vh;
+    min-height: 80vh;
     margin: 0;
     padding: 0;
 }
+
 
 /* ===== POZADINSKE SLIKE ===== */
 .body-with-background {
@@ -19,7 +20,11 @@ body {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
+}
+
+.form-group{
+    border-collapse: collapse; width: 80%; margin: 20px auto;
 }
 
 /* ===== NAVIGACIJA - MENU BAR ===== */
@@ -27,13 +32,13 @@ body {
     background: rgb(14, 37, 97);
     text-align: center;
     position: relative;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .menu-bar ul {
     display: inline-flex;
     list-style: none;
-    color: #fff;
+    color: #b2ff00;
 }
 
 .menu-bar ul li {
@@ -106,13 +111,13 @@ section {
     margin-top: 120px;
     color: #0e2561;
     background-color: rgba(255, 255, 255, 0.9);
-    max-width: 700px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    padding: 40px;
-    border-radius: 12px;
+    padding: 3px;
+    border-radius: 50px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    animation: fadeInUp 1.2s ease;
+    animation: normal;
 }
 
 section h1 {
@@ -212,7 +217,7 @@ section p {
 
 .button {
     background-color: #4CAF50;
-    color: white;
+    color: red;
     padding: 10px 15px;
     text-decoration: none;
     margin: 10px;
@@ -420,30 +425,10 @@ footer {
         width: 95%;
         margin: 10px auto;
     }
-    
-    .usluga-table {
-        width: 95%;
-    }
-}
+  
 
-@media (max-width: 480px) {
-    section {
-        margin-top: 60px;
-        padding: 20px;
-    }
+
+   
     
-    section h1 {
-        font-size: 1.8em;
-    }
-    
-    .page-header h1 {
-        font-size: 2em;
-    }
-    
-    
-    .table-action {
-        display: block;
-        margin: 5px 0;
-        text-align: center;
-    }
+  
 }

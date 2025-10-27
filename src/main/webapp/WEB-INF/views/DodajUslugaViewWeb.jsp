@@ -6,7 +6,7 @@
     <title>Dodaj novu uslugu</title>
  <meta charset="UTF-8">
 <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
+<link rel="stylesheet" type="text/css" href="mystyle.css">
 </head>
 <body>
     <div>
@@ -15,11 +15,7 @@
             <div>
                 <h2>Dodavanje nove usluge</h2>
                 <a href="DodajUsluguController"></a>
-                <a href="${pageContext.request.contextPath}/index.html">
-                    
-                    
-                    Početna stranica
-                </a>
+                
             </div>
 
             <!-- PORUKE -->
@@ -37,27 +33,26 @@
             <!-- FORMA ZA DODAVANJE -->
             <form action="DodajUsluguController" method="post">
                 <div>
-                    <label for="naziv">Naziv usluge:</label>
+                    
                     <input type="text" id="naziv" name="naziv" placeholder='Unesite naziv usluge' required>
                 </div>
                 
                 <div>
-                    <label for="cijena">Cijena (EUR):</label>
+                    
                     <input type="text" id="cijena" name="cijena" placeholder='Unesite cijenu' required>
                 </div>
                 
                 <div>
-                    <label for="kolicina">Količina:</label>
+                  
                     <input type="text" id="kolicina" name="kolicina" placeholder='Unesite količinu' required>
                 </div>
                 
                 <div>
-                    <label for="jedinicaMjere">Jedinica mjere:</label>
                     <input type="text" id="jedinicaMjere" name="jedinicaMjere" placeholder='Unesite jedinicu mjere' required>
                 </div>
 
                 <button type="submit">
-                    Spremi uslugu
+                    Dodaj
                 </button>
                 <button type="submit">
                 <a href="DodajUsluguController">
@@ -77,6 +72,8 @@
                             <th>Cijena</th>
                             <th>Količina</th>
                             <th>Jedinica mjere</th>
+                              <th>Uredi</th>
+                                <th>Briši</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -87,6 +84,8 @@
                                 <td>${usluga.cijena} €</td>
                                 <td>${usluga.kolicina}</td>
                                 <td>${usluga.jedinicaMjere}</td>
+                                <td><a href='VratiDjelatnika?id=" + rs.getInt("id") + "'><i class='fas fa-edit'></i> Uredi</a></td>
+                                <td><a href='BrisiDjelatnika?id=" + rs.getInt("id") + "'><i class='fas fa-trash'></i> Briši</a></td>
                             </tr>
                         </c:forEach>
                     </tbody>
@@ -95,4 +94,10 @@
         </div>
     </div>
 </body>
+
+<a href="${pageContext.request.contextPath}/index.html">
+                    
+                    
+                    Početna stranica
+                </a>
 </html>
