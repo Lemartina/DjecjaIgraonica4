@@ -14,30 +14,38 @@ import java.util.logging.Logger;
 @WebServlet("/BrisiUsluguController")
 public class BrisiUsluguController extends HttpServlet {
     private static final Logger LOGGER = Logger.getLogger(BrisiUsluguController.class.getName());
-    private UslugaDao uslugaDAO;
+    private UslugaDao uslugaDao;
     
     @Override
     public void init() throws ServletException {
         super.init();
-        uslugaDAO = new UslugaDao();
+        uslugaDao = new UslugaDao();
     }
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(BrisiUsluguController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
         
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(BrisiUsluguController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     private void processRequest(HttpServletRequest request, HttpServletResponse response) 
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         
         String naziv = request.getParameter("naziv");
 
@@ -50,12 +58,12 @@ public class BrisiUsluguController extends HttpServlet {
 
         try {
             // Provjeri postoje li zavisni podaci
-            if (uslugaDAO.hasDependentRecords(naziv)) {
+            if (uslugaDao.hasDependentRecords(naziv)) {
                 request.setAttribute("errorMessage", 
                     "Brisanje nije uspjelo jer postoje zavisni podaci. Usluga je već dodana na posjetu.");
             } else {
                 // Izvrši brisanje
-                boolean deleted = uslugaDAO.deleteByNaziv(naziv);
+                boolean deleted = uslugaDao.deleteByNaziv(naziv);
                 if (deleted) {
                     request.setAttribute("successMessage", "Usluga je uspješno obrisana.");
                 } else {
@@ -71,12 +79,12 @@ public class BrisiUsluguController extends HttpServlet {
     }
     
     private void forwardToView(HttpServletRequest request, HttpServletResponse response) 
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         
         // Dohvati sve usluge za prikaz
-        java.util.List<novoselac.model.Usluga> usluge = uslugaDAO.getAllUsluge();
+        java.util.List<novoselac.model.Usluga> usluge = uslugaDao.getAllUsluge();
         request.setAttribute("usluge", usluge);
         
-        request.getRequestDispatcher("/BrisiUslugaViewWeb.jsp").forward(request, response);
+      request.getRequestDispatcher("UslugaService").forward(request, response);
     }
 }

@@ -84,8 +84,8 @@
                                 <td>${usluga.cijena} €</td>
                                 <td>${usluga.kolicina}</td>
                                 <td>${usluga.jedinicaMjere}</td>
-                                <td><a href='VratiDjelatnika?id=" + rs.getInt("id") + "'><i class='fas fa-edit'></i> Uredi</a></td>
-                                <td><a href='BrisiDjelatnika?id=" + rs.getInt("id") + "'><i class='fas fa-trash'></i> Briši</a></td>
+                                <td><a href='VratiUslugu?id=" + rs.getInt("id") + "'><i class='fas fa-edit'></i> Uredi</a></td>
+                                <td><a href='BrisiUsluguController?id=" + rs.getInt("id") + "'><i class='fas fa-trash'></i> Briši</a></td>
                             </tr>
                         </c:forEach>
                     </tbody>

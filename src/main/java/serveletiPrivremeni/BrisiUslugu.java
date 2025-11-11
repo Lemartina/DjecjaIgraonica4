@@ -22,11 +22,11 @@ public class BrisiUslugu extends HttpServlet {
         rsp.setContentType("text/html");
 
         try (PrintWriter out = rsp.getWriter()) {
-            String naziv = req.getParameter("naziv");
+            String sifra = req.getParameter("sifra");
 
             // Provjeri je li naziv proslijeđen
-            if (naziv == null || naziv.trim().isEmpty()) {
-                out.println("<font color='red'> Naziv usluge nije proslijeđen. </font>");
+            if (sifra == null || sifra.trim().isEmpty()) {
+                out.println("<font green='red'> Naziv usl nije proslijeđen. </font>");
                 out.println("<a href=UslugaView>Nazad na usluge</a>");
                 return;
             }
@@ -43,9 +43,9 @@ public class BrisiUslugu extends HttpServlet {
 
             // Izvrši brisanje
             try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost/djecjaigraonicahib", "root", "");
-                 PreparedStatement pst = con.prepareStatement("DELETE FROM usluga WHERE naziv = ?")) {
+                 PreparedStatement pst = con.prepareStatement("DELETE FROM usluga WHERE sifra = ?")) {
 
-                pst.setString(1, naziv);
+                pst.setString(1, sifra);
                 int row = pst.executeUpdate();
 
                 if (row > 0) {
